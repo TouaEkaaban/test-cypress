@@ -1,4 +1,6 @@
 import { defineConfig } from "cypress";
+// import webpackPreprocessor from "@cypress/webpack-preprocessor";
+// import cucumber from "@badeball/cypress-cucumber-preprocessor";
 
 export default defineConfig({
   allowCypressEnv: false,
@@ -13,6 +15,7 @@ export default defineConfig({
     video: true,
     screenshotOnRunFailure: true,
     supportFile: false,   // désactive le support file
+    // specPattern: "**/*.feature",
   },
   env : {
     userEmail: "audrey@gmail.com",
@@ -20,6 +23,11 @@ export default defineConfig({
   },
     setupNodeEvents(on, config) {
       // implement node event listeners here
-
-  },
+      //   cucumber.addCucumberPreprocessorPlugin(on, config);
+      //   on("file:preprocessor", webpackPreprocessor({}));
+      //   return config;
+      // },
+    }
 });
+
+
